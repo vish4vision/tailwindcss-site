@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Restro Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        .swiper-container {
+            height: 200px;
+            width: auto;
+            max-width: auto;
+            top: 30px;
+        }
+
+        .swiper-slide {
+            /* background: rgb(37, 44, 85); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        :root {
+            --swiper-theme-color: #fff;
+        }
+
+        img {
+            background-size: cover;
+        }
+
+        .padMainSection {
+            padding: 30px 424px;
+        }
+
+        .pad100 {
+            padding: 10px 120px;
+        }
+
+        .caption {
+            position: absolute;
+            z-index: 111;
+            font-size: 30px;
+            background: transparent;
+            color: white;
+            text-align: center;
+        }
+
+        ul {
+            background-color: #ddd;
+            text-align: center;
+            padding: 10px;
+            z-index: -111;
+            position: relative;
+            display: table;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        li {
+            font-family: 'Montserrat', 'sans';
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 2.6;
+            width: 2.3em;
+            height: 2.3em;
+            text-align: center;
+            border-radius: 1.5em;
+            background: #3CC88C;
+            margin: 0 1.8em;
+            display: inline-block;
+            position: relative;
+
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            top: 1.2em;
+            left: -4em;
+            width: 4em;
+            height: 0.1em;
+            background: #B0B0B0;
+            z-index: -1;
+        }
+
+        li:first-child::before {
+            display: none;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        @media (min-width: 320px) {
+            .swiper-container {
+                max-width: 360px;
+            }
+
+            .padMainSection {
+                padding: 30px 10px;
+            }
+
+            li {
+                width: 2.2em;
+                height: 2.2em;
+                text-align: center;
+                border-radius: 1em;
+                margin: 0 1.8em;
+                font-weight: 600;
+                font-size: .8rem;
+                line-height: 2.2;
+            }
+
+            li::before {
+                content: "";
+                position: absolute;
+                top: 1.2em;
+                left: -4em;
+                width: 4em;
+                height: 0.1em;
+                background: #B0B0B0;
+                z-index: -1;
+            }
+
+            .caption {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .swiper-container {
+                max-width: 640px;
+            }
+
+            .padMainSection {
+                padding: 30px 10px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .swiper-container {
+                max-width: 680px;
+            }
+
+            .padMainSection {
+                padding: 30px 40px;
+            }
+
+            li {
+                width: 2.3em;
+                height: 2.3em;
+                border-radius: 1.5em;
+                margin: 0 1.8em;
+                font-weight: 600;
+                font-size: 1.1rem;
+                line-height: 2.4;
+            }
+
+            li::before {
+                content: "";
+                position: absolute;
+                top: 1.2em;
+                left: -4em;
+                width: 4em;
+                height: 0.1em;
+                background: #B0B0B0;
+                z-index: -1;
+            }
+
+            .caption {
+                font-size: 30px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .swiper-container {
+                max-width: 680px;
+            }
+
+            .padMainSection {
+                padding: 30px 172px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .swiper-container {
+                max-width: 680px;
+            }
+
+            .padMainSection {
+                padding: 30px 346px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .swiper-container {
+                max-width: 680px;
+            }
+
+            .padMainSection {
+                padding: 30px 424px;
+            }
+
+            li {
+                width: 2.3em;
+                height: 2.3em;
+                border-radius: 1.5em;
+                margin: 0 1.8em;
+                font-weight: 600;
+                font-size: 1.1rem;
+                line-height: 2.4;
+            }
+
+            li::before {
+                content: "";
+                position: absolute;
+                top: 1.2em;
+                left: -4em;
+                width: 4em;
+                height: 0.1em;
+                background: #B0B0B0;
+                z-index: -1;
+            }
+
+            .caption {
+                font-size: 30px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header ==============================  -->
+    <div class="p-2 pl-4 flex justify-between items-center bg-primary sm:w-full md:w-full">
+        <div class=" flex items-center">
+            <img src="./images/bigbank-light.png" width="30" alt="Logo" class="mr-2">
+        </div>
+
+        <!--   right side -->
+        <div class=" pr-4">
+            <a href="#."
+                class="inline-block font-body py-2 px-4 bg-greenDefault text-white hover:bg-green-600 hover:text-white rounded transition ease-in duration-150 transform transition ease-out duration-300">Login
+                or Register</a>
+        </div>
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li class="bg-grayDefault-200">2</li>
+        <li class="bg-grayDefault-200">
+            <img style="display: inherit" src="./images/check-mark.png" alt="check-mark" srcset="">
+        </li>
+    </ul>
+
+    <!-- Slider main container -->
+    <main class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+
+                <img src="./images/banner-1.jpg" class="object-cover object-center w-full" alt="banner" srcset="">
+                <div class="caption">
+                    <div class="text-lg md:text-2xl font-body font-semibold tracking-wide md:-mb-2">Try our other
+                        deposit
+                        options
+                    </div>
+                    <span class="text-lg font-body font-light leading-3 tracking-wider">Text for deposit option
+                        slide</span>
+                    <br>
+                    <button
+                        class="font-body text-lg mt-5 md:-mt-10 bg-greenDefault py-2 hover:bg-greenDefault text-white px-8 tracking-wider rounded transition ease-out duration-500">
+                        Try now
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+
+                <img src="./images/banner-2.jpg" class="object-cover object-center w-full" alt="banner" srcset="">
+                <div class="caption">
+                    <div class="text-lg md:text-2xl font-body font-semibold tracking-wide md:-mb-2">Try our other
+                        deposit
+                        options
+                    </div>
+                    <span class="text-lg font-body font-light leading-3 tracking-wider">Text for deposit option
+                        slide</span>
+                    <br>
+                    <button
+                        class="font-body text-lg mt-5 md:-mt-10 bg-greenDefault py-2 hover:bg-greenDefault text-white px-8 tracking-wider rounded transition ease-out duration-500">
+                        Try now
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+
+                <img src="./images/banner-3.jpg" class="object-cover object-center w-full" alt="banner" srcset="">
+                <div class="caption">
+                    <div class="text-lg md:text-2xl font-body font-semibold tracking-wide md:-mb-2">Try our other
+                        deposit
+                        options
+                    </div>
+                    <span class="text-lg font-body font-light leading-3 tracking-wider">Text for deposit option
+                        slide</span>
+                    <br>
+                    <button
+                        class="font-body text-lg mt-5 md:-mt-10 bg-greenDefault py-2 hover:bg-greenDefault text-white px-8 tracking-wider rounded transition ease-out duration-500">
+                        Try now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </main>
+
+    <!-- <div class="container"> -->
+    <div class="px-10 sm:px-4 padMainSection md:padMainSection xl:padMainSection mx-auto mb-14 sm:mb-20 xl:mb-8 py-10">
+
+        <h2 class="text-2xl md:text-2xl lg:text-3xl font-body text-grayDefault-300 text-xl pt-4 pb-2 pt-10 font-bold">
+            Open deposit account
+        </h2>
+        <p class="text-gray-500 text-base md:text-xl font-body">Please provide us with requested information.</p>
+
+        <div
+            class="flex text-grayDefault-100 text-center bg-grayDefault-100 py-5 mt-10 rounded grid grid-cols-2 justify-self-auto">
+            <div class="">
+                <div class="flex justify-around text-xl font-semibold ml-5">
+                    <span class="flex justify-start text-grayDefault-300 mr-10 font-body text-base md:text-xl">Deposit
+                        amount</span><span
+                        class="justify-items-end text-blueDefault font-body text-base md:text-xl">3000
+                        EUR</span>
+                </div>
+                <img class="ml-10 mt-2" src="./images/range-slider.png" alt="range slider" srcset="">
+            </div>
+
+            <div class="ml-2 justify-items-stretch justify-items-end pl-5 border-l-2">
+                <div class="flex justify-around text-sm font-semibold mr-5 ">
+                    <span class="flex justify-start text-grayDefault-300 font-body mr-5 text-base md:text-xl">Deposit
+                        period</span><span class="justify-items-end text-blueDefault font-body text-base md:text-xl">48
+                        months
+                    </span>
+
+                </div>
+                <img class="mt-2" src="./images/range-period.png" alt="range slider" srcset="">
+            </div>
+        </div>
+        <!-- button area -->
+        <div class="flex text-grayDefault-100 text-left py-5 mt-5 rounded grid grid-cols-2 justify-self-auto">
+            <div class="">
+                <div class="flex text-left justify-between text-sm text-gr font-body font-semibold">
+                    <span class="flex justify-start text-grayDefault-300 font-body text-lg md:text-xl">Interest rate
+                        payment
+                        schedule</span>
+                </div>
+                <div class="px-6 pt-4 py-2 -ml-5">
+                    <button
+                        class="bg-blueDefault hover:bg-blueHover font-body text-white text-lg py-2 px-8 md:px-10 rounded mr-2">
+                        Yearly
+                    </button>
+                    <button
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 px-8 md:px-10 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        Monthly
+                    </button>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="flex justify-items-end font-body justify-center text-sm text-grayDefault-200 font-semibold">
+                    <span
+                        class="flex text-left justify-start font-body text-grayDefault-300 text-lg md:text-xl">Automatic
+                        contract
+                        prolong</span>
+                </div>
+                <div class="px-6 pt-4 py-2 -ml-5 justify-items-stretch justify-items-end justify-end pl-10">
+                    <button
+                        class="bg-blueDefault hover:bg-blueHover font-body text-white py-2 px-12 rounded mr-2 text-lg">
+                        Yes
+                    </button>
+                    <button
+                        class="bg-transparent hover:bg-grayDefault-200 font-body text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 px-12 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second button Group-->
+        <div class="flex text-grayDefault-100 gap-3 text-left py-5 -mt-5 rounded justify-self-auto">
+            <div class="">
+                <div class="flex text-left justify-between font-body text-sm text-grayDefault-200 font-semibold">
+                    <span class="flex justify-start text-grayDefault-300 mr-10 text-xl">Origin of money</span>
+                </div>
+                <div class="px-6 pt-4 pb-2 -ml-5">
+                    <button
+                        class="bg-blueDefault hover:bg-blueHover text-white font-body py-2 px-6 md:px-8 rounded mr-1 text-lg">
+                        Income
+                    </button>
+                    <button
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 font-body mr-1 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        Pension
+                    </button>
+                    <button
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 mr-1 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        Support
+                    </button>
+                    <button class=" bg-transparent font-body hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200
+                        hover:text-white py-2 mr-1 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition
+                        ease-out duration-500 text-lg">
+                        Gifts
+                    </button>
+                    <button
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 font-body hover:bg-grayDefault-200 hover:text-white py-2 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        Others
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Second button Group -->
+        <div class="text-grayDefault-100 gap-3 text-left py-5 -mt-5 rounded justify-self-auto">
+            <div class="">
+                <div class="text-left justify-between text-sm text-grayDefault-200 font-semibold">
+                    <span class=" justify-start font-body text-grayDefault-300 mr-10 text-xl">IBAN number <span
+                            class="text-xs text-gray-400 leading-8 tracking-wider ml-2">
+                            (for interest payments)</span></span>
+                    <div class="items-center border-b border-grayDefault-200 py-2">
+                        <input
+                            class="appearance-none font-body bg-transparent border-none w-full text-gray-200 mr-3 py-1 px-2 leading-tight focus:outline-none text-xl font-medium"
+                            type="text" placeholder="Please type your IBAN number..." aria-label="Full name">
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- features End ============================== -->
+
+    <!-- footer  ============================== -->
+    <div class="p-5 bg-grayDefault-100 text-center items-center">
+        <button
+            class="bg-grayDefault-400 font-body text-xl uppercase hover:bg-blueHover text-white hover:text-white py-2 font-semibold border rounded transition ease-out duration-500 tracking-widest text-lg pad100">
+            Next
+        </button>
+
+    </div>
+    <!-- Swiper JS here -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            // direction: 'horizontal',
+            // loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
+    <!-- <script src="./script.js"></script> -->
+</body>
+
+</html>
