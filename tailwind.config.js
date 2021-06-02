@@ -13,7 +13,10 @@ module.exports = {
           200: '#B0B0B0',
           300: '#4A4A4A',
           400: '#DBE3E7',
-        }
+        },
+        spacing: {
+          px424: 'padding-left: 424px; padding-right: 424px;'
+        },
       },
       fontFamily: {
         body: ['Montserrat']

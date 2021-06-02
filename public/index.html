@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>:: Tailwind Website ::</title>
+
+    <!-- swiper css  -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap"
         rel="stylesheet">
+
+    <!-- range slider css -->
+    <!-- <link rel="stylesheet" href="range-slider.css"> -->
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
     <style>
         .swiper-container {
             height: 200px;
@@ -22,7 +28,6 @@
         }
 
         .swiper-slide {
-            /* background: rgb(37, 44, 85); */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -103,9 +108,202 @@
             font-weight: 400;
         }
 
+        /* validation style */
+        form {
+            margin: 0;
+            font: 100% 'Montserrat', sans-serif;
+            background-color: transparent;
+        }
+
+        *:focus {
+            outline-style: none;
+            background-color: transparent;
+        }
+
+        input:selected {
+            background-color: transparent;
+        }
+
+        .active {
+            background: #003C5A;
+            color: white;
+        }
+
+        .active:hover {
+            background: #003C5A;
+            color: white;
+        }
+
+        input:-internal-autofill-selected {
+            appearance: menulist-button;
+            background-color: #fff !important;
+            background-image: none !important;
+            color: -internal-light-dark(black, white) !important;
+        }
+
+        div.error {
+            padding: 0.4em;
+            margin-top: 1em;
+            color: #ff0000;
+            text-align: left;
+            position: absolute;
+            font-size: 12px;
+        }
+
+        /* ======== range slider style here ======== */
+        .slideContainer {
+            position: absolute;
+            width: 18.8%;
+            margin-top: 20px;
+        }
+
+        .slideContainer2 {
+            position: absolute;
+            width: 18%;
+            margin-top: 26px;
+        }
+
+        .valueAmount {
+            position: absolute;
+            margin-top: 0px;
+            right: 52%;
+            text-align: right;
+            color: #0087ca;
+            font-size: 16px;
+            font-family: 'Montserrat';
+        }
+
+        .valueMonth {
+            position: absolute;
+            margin-top: 0px;
+            right: 30%;
+            color: #0087ca;
+            font-size: 16px;
+            font-family: 'Montserrat';
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 2px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(90deg, #dfdfdf 60%, #dfdfdf 60%);
+            outline: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            -webkit-transition: 0.2s;
+            border-radius: 12px;
+            box-shadow: none;
+        }
+
+        .slider::after {
+            content: "100 EUR";
+            color: #4a4a4a;
+            font-size: 1rem;
+            position: absolute;
+            left: 83%;
+            top: 94%;
+            font-size: 12px;
+        }
+
+        .slider::before {
+            content: "1 EUR";
+            color: #4a4a4a;
+            font-size: 1rem;
+            position: absolute;
+            left: 0%;
+            top: 94%;
+            font-size: 12px;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            -webkit-apperance: none;
+            width: 20px;
+            height: 20px;
+            background: #003c5a;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #003c5a;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .sliderMonth {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 2px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(90deg, #dfdfdf 60%, #dfdfdf 60%);
+            outline: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            -webkit-transition: 0.2s;
+            border-radius: 12px;
+            box-shadow: none;
+        }
+
+        .sliderMonth::after {
+            content: "120 months";
+            color: #4a4a4a;
+            font-size: 1rem;
+            position: absolute;
+            right: 0%;
+            top: 100%;
+            font-size: 12px;
+        }
+
+        .sliderMonth::before {
+            content: "24 months";
+            color: #4a4a4a;
+            font-size: 1rem;
+            position: absolute;
+            left: 0%;
+            top: 100%;
+            font-size: 12px;
+        }
+
+        .sliderMonth:hover {
+            opacity: 1;
+        }
+
+        .sliderMonth::-webkit-slider-thumb {
+            appearance: none;
+            -webkit-apperance: none;
+            width: 20px;
+            height: 20px;
+            background: #003c5a;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .sliderMonth::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #003c5a;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
         @media (min-width: 320px) {
             .swiper-container {
                 max-width: 360px;
+            }
+
+            .swiper-container {
+                height: auto;
+                top: 20px;
             }
 
             .padMainSection {
@@ -137,6 +335,41 @@
             .caption {
                 font-size: 16px;
             }
+
+            .slideContainer {
+                position: absolute;
+                width: 88.8%;
+                margin-top: 20px;
+            }
+
+            .slideContainer2 {
+                position: absolute;
+                width: 88.8%;
+                margin-top: 20px;
+            }
+
+            .valueAmount {
+                right: 8%;
+            }
+
+            .valueMonth {
+                right: 8%;
+            }
+
+            .slider::after {
+                left: 80%;
+                top: 104%;
+            }
+
+            .slider::before {
+                left: 0%;
+                top: 104%;
+            }
+
+            .sliderMonth::after {
+                right: 9%;
+                top: 123%;
+            }
         }
 
         @media (min-width: 640px) {
@@ -145,7 +378,16 @@
             }
 
             .padMainSection {
-                padding: 30px 10px;
+                padding: 10px 10px;
+            }
+
+            .swiper-container {
+                height: auto;
+                top: 20px;
+            }
+
+            .valueAmount {
+                right: 8%;
             }
         }
 
@@ -209,17 +451,24 @@
                 max-width: 680px;
             }
 
+            .swiper-container {
+                height: 200px;
+                width: auto;
+                max-width: auto;
+                top: 30px;
+            }
+
             .padMainSection {
                 padding: 30px 424px;
             }
 
             li {
-                width: 2.3em;
-                height: 2.3em;
+                width: 40px;
+                height: 40px;
                 border-radius: 1.5em;
                 margin: 0 1.8em;
-                font-weight: 600;
-                font-size: 1.1rem;
+                font-weight: normal;
+                font-size: 1rem;
                 line-height: 2.4;
             }
 
@@ -236,7 +485,72 @@
 
             .caption {
                 font-size: 30px;
+            }
 
+            .slideContainer {
+                position: absolute;
+                width: 18.8%;
+                margin-top: 20px;
+            }
+
+            .slideContainer2 {
+                position: absolute;
+                width: 18%;
+                margin-top: 26px;
+            }
+
+            .valueAmount {
+                position: absolute;
+                margin-top: 0px;
+                right: 52%;
+                text-align: right;
+                color: #0087ca;
+                font-size: 16px;
+                font-family: 'Montserrat';
+            }
+
+            .valueMonth {
+                position: absolute;
+                margin-top: 0px;
+                right: 30%;
+                color: #0087ca;
+                font-size: 16px;
+                font-family: 'Montserrat';
+            }
+
+            .slider {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 2px;
+                margin: 0 auto;
+                text-align: center;
+                background: linear-gradient(90deg, #dfdfdf 60%, #dfdfdf 60%);
+                outline: none;
+                opacity: 0.8;
+                transition: opacity 0.2s;
+                -webkit-transition: 0.2s;
+                border-radius: 12px;
+                box-shadow: none;
+            }
+
+            .slider::after {
+                content: "100 EUR";
+                color: #4a4a4a;
+                font-size: 1rem;
+                position: absolute;
+                left: 83%;
+                top: 94%;
+                font-size: 12px;
+            }
+
+            .slider::before {
+                content: "1 EUR";
+                color: #4a4a4a;
+                font-size: 1rem;
+                position: absolute;
+                left: 0%;
+                top: 94%;
+                font-size: 12px;
             }
         }
     </style>
@@ -246,13 +560,13 @@
     <!-- header ==============================  -->
     <div class="p-2 pl-4 flex justify-between items-center bg-primary sm:w-full md:w-full">
         <div class=" flex items-center">
-            <img src="./images/bigbank-light.png" width="30" alt="Logo" class="mr-2">
+            <img src="./images/bigbank-logo.png" width="30" alt="Logo" class="mr-2">
         </div>
 
         <!--   right side -->
         <div class=" pr-4">
             <a href="#."
-                class="inline-block font-body py-2 px-4 bg-greenDefault text-white hover:bg-green-600 hover:text-white rounded transition ease-in duration-150 transform transition ease-out duration-300">Login
+                class="inline-block font-body py-2 px-4 bg-greenDefault text-white hover:bg-green-600 hover:text-white rounded hidden sm:hidden md:inline-block transition ease-in duration-150 transform transition ease-out duration-300">Login
                 or Register</a>
         </div>
     </div>
@@ -274,15 +588,14 @@
 
                 <img src="./images/banner-1.jpg" class="object-cover object-center w-full" alt="banner" srcset="">
                 <div class="caption">
-                    <div class="text-lg md:text-2xl font-body font-semibold tracking-wide md:-mb-2">Try our other
-                        deposit
-                        options
+                    <div class="text-xl md:text-2xl lg:text-xl font-body font-semibold tracking-wide md:-mb-4">Try our
+                        other deposit options
                     </div>
-                    <span class="text-lg font-body font-light leading-3 tracking-wider">Text for deposit option
+                    <span class="text-sm font-body leading-3 tracking-wider">Text for deposit option
                         slide</span>
                     <br>
                     <button
-                        class="font-body text-lg mt-5 md:-mt-10 bg-greenDefault py-2 hover:bg-greenDefault text-white px-8 tracking-wider rounded transition ease-out duration-500">
+                        class="font-body text-sm font-semibold bg-greenDefault py-2 hover:bg-greenDefault text-white mt-5 md:-mt-10 px-8 tracking-wider rounded transition ease-out duration-500">
                         Try now
                     </button>
                 </div>
@@ -291,15 +604,14 @@
 
                 <img src="./images/banner-2.jpg" class="object-cover object-center w-full" alt="banner" srcset="">
                 <div class="caption">
-                    <div class="text-lg md:text-2xl font-body font-semibold tracking-wide md:-mb-2">Try our other
-                        deposit
-                        options
+                    <div class="text-xl md:text-2xl lg:text-xl font-body font-semibold tracking-wide md:-mb-4">Try our
+                        other deposit options
                     </div>
-                    <span class="text-lg font-body font-light leading-3 tracking-wider">Text for deposit option
+                    <span class="text-sm font-body leading-3 tracking-wider">Text for deposit option
                         slide</span>
                     <br>
                     <button
-                        class="font-body text-lg mt-5 md:-mt-10 bg-greenDefault py-2 hover:bg-greenDefault text-white px-8 tracking-wider rounded transition ease-out duration-500">
+                        class="font-body text-sm font-semibold bg-greenDefault py-2 hover:bg-greenDefault text-white mt-5 md:-mt-10 px-8 tracking-wider rounded transition ease-out duration-500">
                         Try now
                     </button>
                 </div>
@@ -308,15 +620,14 @@
 
                 <img src="./images/banner-3.jpg" class="object-cover object-center w-full" alt="banner" srcset="">
                 <div class="caption">
-                    <div class="text-lg md:text-2xl font-body font-semibold tracking-wide md:-mb-2">Try our other
-                        deposit
-                        options
+                    <div class="text-xl md:text-2xl lg:text-xl font-body font-semibold tracking-wide md:-mb-4">Try our
+                        other deposit options
                     </div>
-                    <span class="text-lg font-body font-light leading-3 tracking-wider">Text for deposit option
+                    <span class="text-sm font-body leading-3 tracking-wider">Text for deposit option
                         slide</span>
                     <br>
                     <button
-                        class="font-body text-lg mt-5 md:-mt-10 bg-greenDefault py-2 hover:bg-greenDefault text-white px-8 tracking-wider rounded transition ease-out duration-500">
+                        class="font-body text-sm font-semibold bg-greenDefault py-2 hover:bg-greenDefault text-white mt-5 md:-mt-10 px-8 tracking-wider rounded transition ease-out duration-500">
                         Try now
                     </button>
                 </div>
@@ -335,102 +646,104 @@
     </main>
 
     <!-- <div class="container"> -->
-    <div class="px-10 sm:px-4 padMainSection md:padMainSection xl:padMainSection mx-auto mb-14 sm:mb-20 xl:mb-8 py-10">
-
-        <h2 class="text-2xl md:text-2xl lg:text-3xl font-body text-grayDefault-300 text-xl pt-4 pb-2 pt-10 font-bold">
+    <div class="padMainSection sm:px-4 md:padMainSection xl:padMainSection mx-auto mb-8 sm:mb-0 xl:mb-8 py-5">
+        <h2 class="md:text-2xl lg:text-xl text-xl pt-4 pb-2 pt-6 font-bold font-body text-grayDefault-300">
             Open deposit account
         </h2>
-        <p class="text-gray-500 text-base md:text-xl font-body">Please provide us with requested information.</p>
-
+        <p class="text-gray-500 text-base md:text-base font-body">Please provide us with requested information.</p>
         <div
-            class="flex text-grayDefault-100 text-center bg-grayDefault-100 py-5 mt-10 rounded grid grid-cols-2 justify-self-auto">
-            <div class="">
-                <div class="flex justify-around text-xl font-semibold ml-5">
-                    <span class="flex justify-start text-grayDefault-300 mr-10 font-body text-base md:text-xl">Deposit
-                        amount</span><span
-                        class="justify-items-end text-blueDefault font-body text-base md:text-xl">3000
-                        EUR</span>
+            class="flex text-grayDefault-100 text-center bg-grayDefault-100 pt-5 mt-6 pb-16 md:pb-7 rounded grid md:grid-cols-2 justify-self-auto">
+            <div class="mb-20 sm:mb-20 md:mb-5">
+                <div class="flex text-xl font-semibold ml-5">
+                    <span
+                        class="flex justify-items-start justify-start text-grayDefault-300 font-body text-base">Deposit
+                        amount</span>
+                    <p class="valueAmount"> <span id="value"></span> EUR</p>
+                    <div class="slideContainer">
+                        <input type="range" min="1" max="100" value="30" id="myRange" class="slider">
+                    </div>
                 </div>
-                <img class="ml-10 mt-2" src="./images/range-slider.png" alt="range slider" srcset="">
             </div>
 
-            <div class="ml-2 justify-items-stretch justify-items-end pl-5 border-l-2">
-                <div class="flex justify-around text-sm font-semibold mr-5 ">
-                    <span class="flex justify-start text-grayDefault-300 font-body mr-5 text-base md:text-xl">Deposit
-                        period</span><span class="justify-items-end text-blueDefault font-body text-base md:text-xl">48
-                        months
-                    </span>
-
+            <div class="ml-2 justify-items-stretch justify-items-end pl-5 md:border-l-2">
+                <div class="flex text-sm font-semibold mr-5 ">
+                    <span
+                        class="flex justify-items-start justify-start text-grayDefault-300 font-body mr-5 text-base">Deposit
+                        period</span>
+                    <p class="valueMonth"> <span id="valueMonth"></span> months</p>
+                    <div class="slideContainer2">
+                        <input type="range" min="1" max="100" value="30" id="myMonth" class="sliderMonth">
+                    </div>
                 </div>
-                <img class="mt-2" src="./images/range-period.png" alt="range slider" srcset="">
+
             </div>
         </div>
         <!-- button area -->
-        <div class="flex text-grayDefault-100 text-left py-5 mt-5 rounded grid grid-cols-2 justify-self-auto">
+        <div class="flex text-grayDefault-100 text-left py-5 mt-5 rounded grid md:grid-cols-2 justify-self-auto">
             <div class="">
-                <div class="flex text-left justify-between text-sm text-gr font-body font-semibold">
-                    <span class="flex justify-start text-grayDefault-300 font-body text-lg md:text-xl">Interest rate
+                <div class="flex text-left justify-between text-sm text-grayDefault-200 font-body font-semibold">
+                    <span class="flex justify-start text-grayDefault-300 font-body text-base ">Interest rate
                         payment
                         schedule</span>
                 </div>
                 <div class="px-6 pt-4 py-2 -ml-5">
                     <button
-                        class="bg-blueDefault hover:bg-blueHover font-body text-white text-lg py-2 px-8 md:px-10 rounded mr-2">
+                        class="bg-blueDefault hover:bg-blueHover font-body text-white text-base py-2 px-8 md:px-10 rounded mr-2">
                         Yearly
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 px-8 md:px-10 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 px-8 md:px-10 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
                         Monthly
                     </button>
                 </div>
             </div>
 
             <div class="">
-                <div class="flex justify-items-end font-body justify-center text-sm text-grayDefault-200 font-semibold">
-                    <span
-                        class="flex text-left justify-start font-body text-grayDefault-300 text-lg md:text-xl">Automatic
+                <div
+                    class="flex justify-items-end font-body md:justify-left md:ml-5 text-sm text-grayDefault-200 font-semibold">
+                    <span class="flex text-left justify-start font-body text-grayDefault-300 text-base">Automatic
                         contract
                         prolong</span>
                 </div>
-                <div class="px-6 pt-4 py-2 -ml-5 justify-items-stretch justify-items-end justify-end pl-10">
+                <div class="px-6 pt-4 py-2 -ml-5 justify-items-stretch justify-items-end justify-end md:pl-10">
                     <button
-                        class="bg-blueDefault hover:bg-blueHover font-body text-white py-2 px-12 rounded mr-2 text-lg">
+                        class="bg-blueDefault hover:bg-blueHover font-body text-white py-2 px-12 rounded mr-2 text-base">
                         Yes
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 font-body text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 px-12 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        class="bg-transparent hover:bg-grayDefault-200 font-body text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 px-12 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
                         No
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Second button Group-->
+        <!-- First button Group-->
         <div class="flex text-grayDefault-100 gap-3 text-left py-5 -mt-5 rounded justify-self-auto">
             <div class="">
                 <div class="flex text-left justify-between font-body text-sm text-grayDefault-200 font-semibold">
-                    <span class="flex justify-start text-grayDefault-300 mr-10 text-xl">Origin of money</span>
+                    <span class="flex justify-start text-grayDefault-300 mr-10 text-base">Origin of money</span>
                 </div>
                 <div class="px-6 pt-4 pb-2 -ml-5">
                     <button
-                        class="bg-blueDefault hover:bg-blueHover text-white font-body py-2 px-6 md:px-8 rounded mr-1 text-lg">
+                        class="bg-blueDefault hover:bg-blueHover text-white font-body py-2 px-6 md:px-8  rounded mr-1 text-base">
                         Income
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 font-body mr-1 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 font-body mr-2 px-8 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
                         Pension
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 mr-1 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 mr-2 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
                         Support
                     </button>
                     <button class=" bg-transparent font-body hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200
-                        hover:text-white py-2 mr-1 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition
-                        ease-out duration-500 text-lg">
+                        hover:text-white py-2 mr-2 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition
+                        ease-out duration-500 text-base">
                         Gifts
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 font-body hover:bg-grayDefault-200 hover:text-white py-2 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 font-body hover:bg-grayDefault-200 hover:text-white py-2 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
                         Others
                     </button>
                 </div>
@@ -439,14 +752,16 @@
         <!-- Second button Group -->
         <div class="text-grayDefault-100 gap-3 text-left py-5 -mt-5 rounded justify-self-auto">
             <div class="">
-                <div class="text-left justify-between text-sm text-grayDefault-200 font-semibold">
-                    <span class=" justify-start font-body text-grayDefault-300 mr-10 text-xl">IBAN number <span
-                            class="text-xs text-gray-400 leading-8 tracking-wider ml-2">
-                            (for interest payments)</span></span>
-                    <div class="items-center border-b border-grayDefault-200 py-2">
-                        <input
-                            class="appearance-none font-body bg-transparent border-none w-full text-gray-200 mr-3 py-1 px-2 leading-tight focus:outline-none text-xl font-medium"
-                            type="text" placeholder="Please type your IBAN number..." aria-label="Full name">
+                <div class="text-left justify-between text-sm text-grayDefault-200 ">
+                    <span class=" justify-start font-body text-grayDefault-300 font-semibold text-base">IBAN
+                        number </span>
+                    <span class="text-xs text-gray-400 leading-8 tracking-wider ml-2">
+                        (for interest payments)</span>
+                    <div class="items-center border-b border-grayDefault-200">
+                        <form action="#" method="post">
+                            <input name="iban" id="iban"
+                                class="appearance-none error font-body bg-transparent border-none w-full text-gray-800 mr-3 py-1 px-2 leading-tight focus:outline-none text-base"
+                                type="text" placeholder="Please type your IBAN number..." aria-label="Full name">
                     </div>
                     <br>
                 </div>
@@ -459,21 +774,22 @@
 
     <!-- footer  ============================== -->
     <div class="p-5 bg-grayDefault-100 text-center items-center">
-        <button
-            class="bg-grayDefault-400 font-body text-xl uppercase hover:bg-blueHover text-white hover:text-white py-2 font-semibold border rounded transition ease-out duration-500 tracking-widest text-lg pad100">
+        <button name="submit" id="submit" type="submit"
+            class="bg-grayDefault-400 btn font-body text-xl uppercase hover:bg-primary text-white hover:text-white py-2 font-semibold border rounded transition ease-out duration-500 tracking-widest text-lg pad100">
             Next
         </button>
-
     </div>
+    </form>
     <!-- Swiper JS here -->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/gh/KevinBatdorf/alpine-auto-init@0.x.x/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
             // Optional parameters
             // direction: 'horizontal',
             // loop: true,
-
             // If we need pagination
             pagination: {
                 el: '.swiper-pagination',
@@ -491,7 +807,33 @@
             },
         });
     </script>
-    <!-- <script src="./script.js"></script> -->
+    <!-- validation js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="amount-range.js"></script>
+    <!-- <script src="month-range.js"></script> -->
+    <script>
+        $('form').submit(function (e) {
+            e.preventDefault();
+            if ($('div.error').length) {
+                $('div.error').remove();
+            }
+            var iban = $('#iban').val();
+            var reg = /^IT\d{2}[ ][a-zA-Z]\d{3}[ ]\d{4}[ ]\d{4}[ ]\d{4}[ ]\d{4}[ ]\d{3}|IT\d{2}[a-zA-Z]\d{22}$/;
+
+            if (!reg.test(iban)) {
+                $('<div class="error"/>').text('Not a valid IBAN number').
+                    appendTo($(this));
+                $('.btn').on("click", function () {
+                    $('.btn.active').removeClass("active");
+                    $(this).addClass("active");
+                })
+
+            } else {
+                console.alert('Correct IBAN');
+                //$(this).addClass('active')
+            }
+        });
+    </script>
 </body>
 
 </html>

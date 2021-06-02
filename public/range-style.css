@@ -1,0 +1,62 @@
+
+.slideContainer {
+    width: 75%;
+    margin-top: 200px;
+}
+.valueAmount {
+    position: absolute;
+    margin-top: -100px;
+    opacity: 0.7;
+    right: 220px;
+    color: #0087ca;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(90deg, #dfdfdf 60%, #dfdfdf 60%);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    -webkit-transition: 0.2s;
+    border-radius: 12px;
+    box-shadow: none;
+}
+.slider::after {
+    content: "100 EUR";
+    color: #4a4a4a;
+    font-size: 1rem;
+    position: absolute;
+    left: 84%;
+    top: 36%;
+}
+.slider::before {
+    content: "1 EUR";
+    color: #4a4a4a;
+    font-size: 1rem;
+    position: absolute;
+    left: 13%;
+    top: 36%;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-apperance: none;
+    width: 20px;
+    height: 20px;
+    background: #003c5a;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #003c5a;
+    border-radius: 50%;
+    cursor: pointer;
+}
