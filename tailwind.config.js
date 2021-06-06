@@ -20,7 +20,17 @@ module.exports = {
       },
       fontFamily: {
         body: ['Montserrat']
-      }
+      },
+      maxWidth: (theme, { breakpoints }) => ({
+        none: 'none',
+        '2xl': '42rem',
+        '3xl': '48rem',
+        full: '100%',
+        min: 'min-content',
+        max: 'max-content',
+        prose: '65ch',
+        ...breakpoints(theme('screens')),
+      }),
     },
   },
   variants: {

@@ -338,13 +338,13 @@
 
             .slideContainer {
                 position: absolute;
-                width: 88.8%;
+                width: 88%;
                 margin-top: 20px;
             }
 
             .slideContainer2 {
                 position: absolute;
-                width: 88.8%;
+                width: 88%;
                 margin-top: 20px;
             }
 
@@ -424,6 +424,30 @@
             .caption {
                 font-size: 30px;
             }
+
+            .valueAmount {
+                position: absolute;
+                margin-top: 0px;
+                right: 52%;
+            }
+
+            .valueMonth {
+                position: absolute;
+                margin-top: 0px;
+                right: 10%;
+            }
+
+            .slideContainer {
+                position: absolute;
+                width: 40%;
+                margin-top: 20px;
+            }
+
+            .slideContainer2 {
+                position: absolute;
+                width: 38%;
+                margin-top: 20px;
+            }
         }
 
         @media (min-width: 1024px) {
@@ -434,6 +458,30 @@
             .padMainSection {
                 padding: 30px 172px;
             }
+
+            .valueAmount {
+                position: absolute;
+                margin-top: 0px;
+                right: 52%;
+            }
+
+            .valueMonth {
+                position: absolute;
+                margin-top: 0px;
+                right: 20%;
+            }
+
+            .slideContainer {
+                position: absolute;
+                width: 29%;
+                margin-top: 20px;
+            }
+
+            .slideContainer2 {
+                position: absolute;
+                width: 27%;
+                margin-top: 20px;
+            }
         }
 
         @media (min-width: 1280px) {
@@ -443,6 +491,30 @@
 
             .padMainSection {
                 padding: 30px 346px;
+            }
+
+            .valueAmount {
+                position: absolute;
+                margin-top: 0px;
+                right: 52%;
+            }
+
+            .valueMonth {
+                position: absolute;
+                margin-top: 0px;
+                right: 28%;
+            }
+
+            .slideContainer {
+                position: absolute;
+                width: 22%;
+                margin-top: 20px;
+            }
+
+            .slideContainer2 {
+                position: absolute;
+                width: 21%;
+                margin-top: 20px;
             }
         }
 
@@ -502,20 +574,13 @@
             .valueAmount {
                 position: absolute;
                 margin-top: 0px;
-                right: 52%;
-                text-align: right;
-                color: #0087ca;
-                font-size: 16px;
-                font-family: 'Montserrat';
+                right: 51%;
             }
 
             .valueMonth {
                 position: absolute;
                 margin-top: 0px;
                 right: 30%;
-                color: #0087ca;
-                font-size: 16px;
-                font-family: 'Montserrat';
             }
 
             .slider {
@@ -533,14 +598,9 @@
                 box-shadow: none;
             }
 
-            .slider::after {
-                content: "100 EUR";
-                color: #4a4a4a;
-                font-size: 1rem;
-                position: absolute;
-                left: 83%;
-                top: 94%;
-                font-size: 12px;
+            .sliderMonth::after {
+                right: 0%;
+                top: 123%;
             }
 
             .slider::before {
@@ -558,7 +618,7 @@
 
 <body>
     <!-- header ==============================  -->
-    <div class="p-2 pl-4 flex justify-between items-center bg-primary sm:w-full md:w-full">
+    <div class="flex justify-between items-center bg-primary w-full sm:w-full md:w-full p-2 pl-4 ">
         <div class=" flex items-center">
             <img src="./images/bigbank-logo.png" width="30" alt="Logo" class="mr-2">
         </div>
@@ -645,9 +705,9 @@
         <div class="swiper-scrollbar"></div>
     </main>
 
-    <!-- <div class="container"> -->
-    <div class="padMainSection sm:px-4 md:padMainSection xl:padMainSection mx-auto mb-8 sm:mb-0 xl:mb-8 py-5">
-        <h2 class="md:text-2xl lg:text-xl text-xl pt-4 pb-2 pt-6 font-bold font-body text-grayDefault-300">
+    <!-- body container start here -->
+    <div class="w-full md:max-w-2xl xl:max-w-2xl mx-auto ml-auto mr-auto sm:mb-0 py-7 px-4">
+        <h2 class="md:text-2xl lg:text-xl text-xl pt-4 pb-2 pt-6 font-semibold font-body text-grayDefault-300">
             Open deposit account
         </h2>
         <p class="text-gray-500 text-base md:text-base font-body">Please provide us with requested information.</p>
@@ -724,21 +784,21 @@
                 <div class="flex text-left justify-between font-body text-sm text-grayDefault-200 font-semibold">
                     <span class="flex justify-start text-grayDefault-300 mr-10 text-base">Origin of money</span>
                 </div>
-                <div class="px-6 pt-4 pb-2 -ml-5">
+                <div class="px-6 pt-4 pb-2 -ml-5 justify-around">
                     <button
-                        class="bg-blueDefault hover:bg-blueHover text-white font-body py-2 px-6 md:px-8  rounded mr-1 text-base">
+                        class="bg-blueDefault hover:bg-blueHover text-white font-body mb-5 py-2 px-6 md:px-8  rounded mr-1 text-base">
                         Income
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 font-body mr-2 px-8 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 font-body mr-2 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
                         Pension
                     </button>
                     <button
-                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white font-body py-2 mr-2 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-lg">
+                        class="bg-transparent hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200 hover:text-white py-2 font-body mb-5 mr-2 px-6 border border-gray-300 hover:border-transparent rounded transition ease-out duration-500 text-base">
                         Support
                     </button>
                     <button class=" bg-transparent font-body hover:bg-grayDefault-200 text-grayDefault-300 hover:bg-grayDefault-200
-                        hover:text-white py-2 mr-2 px-5 md:px-6 border border-gray-300 hover:border-transparent rounded transition
+                        hover:text-white py-2 mr-2 px-6 md:px-6 border border-gray-300 hover:border-transparent rounded transition
                         ease-out duration-500 text-base">
                         Gifts
                     </button>
